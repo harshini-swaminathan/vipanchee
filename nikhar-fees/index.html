@@ -311,11 +311,19 @@ const upiParams =
   '&cu=INR' +
   '&tn=' + encodeURIComponent(ref);
 
+  const upiUrl =
+  'upi://pay?' +
+  'pa=harshini098-2@okicici' +
+  '&pn=Vipanchee%20Nruthyalaya' +
+  '&am=1800' +
+  '&cu=INR' +
+  '&tn=' + encodeURIComponent('NIK' + Date.now());
+
 document.getElementById('gpay-btn').href =
   'gpay://upi/pay?' + upiParams;
 
 document.getElementById('phonepe-btn').href =
-  'phonepe://pay?' + upiParams;
+  upiUrl;
 
 document.getElementById('paytm-btn').href =
   'paytmmp://pay?' + upiParams;
