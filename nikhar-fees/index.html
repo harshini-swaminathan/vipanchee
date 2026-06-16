@@ -302,16 +302,23 @@
 
   <script>
     // Generate unique ref on page load so every visitor gets a fresh link
-    var ref = 'NIK' + Date.now();
-    var base = '&pn=Vipanchee%20Nruthyalaya&am=1800&cu=INR';
-    var upi = 'pa=harshini098-2@okicici';
+    const ref = 'NIK' + Date.now();
 
-    const upiUrl =
-  'upi://pay?pa=harshini098-2@okicici&pn=Vipanchee%20Nruthyalaya&am=1800&cu=INR';
+const upiParams =
+  'pa=harshini098-2@okicici' +
+  '&pn=Vipanchee%20Nruthyalaya' +
+  '&am=1800' +
+  '&cu=INR' +
+  '&tn=' + encodeURIComponent(ref);
 
-    document.getElementById('gpay-btn').href    = upiUrl;
-    document.getElementById('phonepe-btn').href = upiUrl;
-    document.getElementById('paytm-btn').href   = upiUrl;
+document.getElementById('gpay-btn').href =
+  'gpay://upi/pay?' + upiParams;
+
+document.getElementById('phonepe-btn').href =
+  'phonepe://pay?' + upiParams;
+
+document.getElementById('paytm-btn').href =
+  'paytmmp://pay?' + upiParams;
   </script>
   </div>
 
