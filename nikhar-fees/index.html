@@ -312,22 +312,27 @@ const upiParams =
   '&cu=INR' +
   '&tr=' + orderId;
 
-  const upiUrl =
+  
+  const id = crypto.randomUUID();
+
+const upiUrl =
   'upi://pay?' +
   'pa=harshini098-2@okicici' +
   '&pn=Vipanchee%20Nruthyalaya' +
   '&am=1800' +
   '&cu=INR' +
-  '&tn=' + encodeURIComponent('NIK' + Date.now());
+  '&tr=' + id +
+  '&tid=' + id +
+  '&tn=' + id;
 
-  const gpayUpiUrl =
-  'gpay://upi/pay?' +
-  'pa=harshini098-2@okicici' +
+document.getElementById('gpay-btn').href =
+  'gpay://pay?' + 'pa=harshini098-2@okicici' +
   '&pn=Vipanchee%20Nruthyalaya' +
   '&am=1800' +
-  '&cu=INR';
-
-document.getElementById('gpay-btn').href ="intent://upi/pay?pa=harshini098-2@okicici&pn=Vipanchee%20Nruthyalaya&am=1800&cu=INR#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end"
+  '&cu=INR' +
+  '&tr=' + id +
+  '&tid=' + id +
+  '&tn=' + id;
 
 document.getElementById('phonepe-btn').href =
   upiUrl;
