@@ -302,14 +302,15 @@
 
   <script>
     // Generate unique ref on page load so every visitor gets a fresh link
-    const ref = 'NIK' + Date.now();
+    const orderId = 'NIK' + Date.now();
 
 const upiParams =
+  'upi://pay?' +
   'pa=harshini098-2@okicici' +
   '&pn=Vipanchee%20Nruthyalaya' +
   '&am=1800' +
   '&cu=INR' +
-  '&tn=' + encodeURIComponent(ref);
+  '&tr=' + orderId;
 
   const upiUrl =
   'upi://pay?' +
