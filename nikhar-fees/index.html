@@ -320,8 +320,15 @@ const upiParams =
   '&cu=INR' +
   '&tn=' + encodeURIComponent('NIK' + Date.now());
 
+  const gpayUpiUrl =
+  'gpay://upi/pay?' +
+  'pa=harshini098-2@okicici' +
+  '&pn=Vipanchee%20Nruthyalaya' +
+  '&am=1800' +
+  '&cu=INR';
+
 document.getElementById('gpay-btn').href =
-  'gpay://upi/pay?' + upiParams;
+  gpayUpiUrl;
 
 document.getElementById('phonepe-btn').href =
   upiUrl;
